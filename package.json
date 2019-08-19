@@ -1,0 +1,21 @@
+{
+  "name": "pl-components",
+  "version": "1.0.0",
+  "description": "Component library",
+  "author": "Puppy Link",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "codemirror": "^5.48.4",
+    "nuxt": "^2.0.0",
+    "vuep": "^0.8.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^1.0.0"
+  }
+}
