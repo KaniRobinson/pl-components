@@ -1,7 +1,7 @@
 {
-  "name": "pl-components",
+  "name": "@pupplylink/components",
   "version": "1.0.0",
-  "description": "Component library",
+  "description": "Puppy Link Component library",
   "author": "Puppy Link",
   "private": true,
   "scripts": {
