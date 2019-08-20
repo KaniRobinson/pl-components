@@ -1,5 +1,1 @@
-import Input from './input'
-
-export {
-  Input,
-}
+export { default as Input } from './input/Input'
