@@ -1,7 +1,5 @@
 import * as components from './components'
 
-console.log(components)
-
 const PLComponents = {
   install(Vue, options = {}) {
     for (let componentKey in components) {
