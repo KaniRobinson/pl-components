@@ -77,8 +77,10 @@ export default {
         'mr-2': !!this.label,
         'border-gray-600': this.disabled || this.loading,
         'text-gray-600': this.disabled || this.loading,
+        [`hover:border-${this.color}`]: !this.disabled && !this.loading,
         [`border-${this.color}`]: this.value && !this.disabled && !this.loading,
         'border-gray-400': !this.value && !this.disabled && !this.loading,
+        [`hover:text-${this.color}`]: !this.disabled && !this.loading,
         [`text-${this.color}`]: this.value && !this.disabled && !this.loading,
         'text-gray-400': !this.value && !this.disabled && !this.loading,
       }
