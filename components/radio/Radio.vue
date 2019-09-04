@@ -1,14 +1,15 @@
 <template>
   <div>
     <label :class="labelClasses">
-      <input type="checkbox"
+      <input type="radio"
         v-on="$listeners"
+        :value="value"
         :required="required"
         :disabled="disabled || loading"
-        :checked="value"
+        :checked="state"
         class="hidden"
-        @change="handleChange">
-      <div :class="classes">
+        @change="onChange">
+      <div :class="radioClasses">
         <i :class="iconClasses" />
       </div>
       <span v-if="label" :class="textClasses">{{ label }}</span>
@@ -19,18 +20,21 @@
 
 <script>
 export default {
-  name: 'PCheckbox',
+  name: 'PRadio',
   model: {
       prop: 'modelValue',
       event: 'input'
   },
   props: {
+    value: {
+        default: '',
+    },
     modelValue: {
-      default: undefined,
+        default: undefined,
     },
     checked: {
-      type: Boolean,
-      default: false,
+        type: Boolean,
+        default: false,
     },
     required: {
         type: Boolean,
@@ -58,36 +62,37 @@ export default {
     },
     model: {}
   },
-  data () {
-    return {
-      value: false,
-    }
-  },
   computed: {
-    classes () {
-      return {
-        'flex': true,
-        'justify-center': true,
-        'items-center': true,
-        'cursor-pointer': true,
-        'w-6': true,
-        'h-6': true,
-        'border-2': true,
-        'rounded': true,
-        'mr-2': !!this.label,
-        'border-gray-600': this.disabled || this.loading,
-        'text-gray-600': this.disabled || this.loading,
-        [`border-${this.color}`]: this.value && !this.disabled && !this.loading,
-        'border-gray-400': !this.value && !this.disabled && !this.loading,
-        [`text-${this.color}`]: this.value && !this.disabled && !this.loading,
-        'text-gray-400': !this.value && !this.disabled && !this.loading,
+    state() {
+      if (this.modelValue === undefined) {
+          return this.checked;
       }
+      return this.modelValue === this.value;
     },
     labelClasses () {
       return {
         'flex': true,
         'items-center': true,
+        'cursor-pointer': true,
         'mb-1': !!this.error,
+      }
+    },
+    radioClasses () {
+      return {
+        'flex': true,
+        'justify-center': true,
+        'items-center': true,
+        'w-6': true,
+        'h-6': true,
+        'border-2': true,
+        'rounded-full': true,
+        'mr-2': !!this.label,
+        'border-gray-600': this.disabled || this.loading,
+        'text-gray-600': this.disabled || this.loading,
+        [`border-${this.color}`]: this.state && !this.disabled && !this.loading,
+        'border-gray-400': !this.state && !this.disabled && !this.loading,
+        [`text-${this.color}`]: this.state && !this.disabled && !this.loading,
+        'text-gray-400': !this.state && !this.disabled && !this.loading,
       }
     },
     iconClasses () {
@@ -96,8 +101,7 @@ export default {
         'text-sm': true,
         'fa-circle-notch': this.loading,
         'fa-spin': this.loading,
-        'fa-check': this.value && !this.loading,
-        'fa-times': !this.value && !this.loading,
+        'fa-circle': !this.loading,
       }
     },
     textClasses () {
@@ -113,11 +117,24 @@ export default {
       }
     },
   },
+  watch: {
+    checked(newValue) {
+      if (newValue !== this.state) {
+        this.toggle();
+      }
+    }
+  },
+  mounted() {
+    if (this.checked && !this.state) {
+        this.toggle();
+    }
+  },
   methods: {
-    handleChange () {
-      this.value = !this.value
-
-      this.$emit('input', this.value)
+    onChange() {
+      this.toggle();
+    },
+    toggle() {
+      this.$emit('input', this.state ? '' : this.value);
     }
   },
 }
