@@ -1,6 +1,16 @@
 <template>
   <div class="container mx-auto">
     <div>
+      <p-textarea
+        v-model="input"
+        autofocus
+        id="test"
+        label="Test"
+        placeholder="This is a test"
+        error="This is an error."
+        color="blue-600"
+        class="mb-4" />
+
       <p-input
         v-model="input"
         id="test"
