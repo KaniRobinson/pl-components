@@ -3,39 +3,25 @@
     <label :class="labelClasses">
       <input type="radio"
         v-on="$listeners"
-        :value="value"
         :required="required"
         :disabled="disabled || loading"
-        :checked="state"
+        :value="value"
+        :checked="checked"
         class="hidden"
-        @change="onChange">
+        @change="handleChange">
       <div :class="classes">
         <i :class="iconClasses" />
       </div>
       <span v-if="label" :class="textClasses">{{ label }}</span>
     </label>
-    <p :class="errorClasses">{{ error }}</p>
+    <p-error v-if="error" :error="error" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'PRadio',
-  model: {
-      prop: 'modelValue',
-      event: 'input'
-  },
   props: {
-    value: {
-        default: '',
-    },
-    modelValue: {
-        default: undefined,
-    },
-    checked: {
-        type: Boolean,
-        default: false,
-    },
     required: {
         type: Boolean,
         default: false,
@@ -60,14 +46,21 @@ export default {
       type: [String,null],
       default: null,
     },
-    model: {}
+    value: {
+      type: String,
+      required: true,
+    },
+    modelValue: {
+      default: undefined,
+    },
+  },
+  model: {
+      prop: 'modelValue',
+      event: 'input'
   },
   computed: {
-    state() {
-      if (this.modelValue === undefined) {
-          return this.checked;
-      }
-      return this.modelValue === this.value;
+    checked () {
+      return this.modelValue === this.value
     },
     labelClasses () {
       return {
@@ -90,11 +83,11 @@ export default {
         'border-gray-600': this.disabled || this.loading,
         'text-gray-600': this.disabled || this.loading,
         [`hover:border-${this.color}`]: !this.disabled && !this.loading,
-        [`border-${this.color}`]: this.state && !this.disabled && !this.loading,
-        'border-gray-400': !this.state && !this.disabled && !this.loading,
+        [`border-${this.color}`]: this.checked && !this.disabled && !this.loading,
+        'border-gray-400': !this.checked && !this.disabled && !this.loading,
         [`hover:text-${this.color}`]: !this.disabled && !this.loading,
-        [`text-${this.color}`]: this.state && !this.disabled && !this.loading,
-        'text-gray-400': !this.state && !this.disabled && !this.loading,
+        [`text-${this.color}`]: this.checked && !this.disabled && !this.loading,
+        'text-gray-400': !this.checked && !this.disabled && !this.loading,
       }
     },
     iconClasses () {
@@ -112,32 +105,11 @@ export default {
         'font-semibold': true,
       }
     },
-    errorClasses () {
-      return {
-        'text-xs': true,
-        'text-red-400': true,
-      }
-    },
-  },
-  watch: {
-    checked(newValue) {
-      if (newValue !== this.state) {
-        this.toggle();
-      }
-    }
-  },
-  mounted() {
-    if (this.checked && !this.state) {
-        this.toggle();
-    }
   },
   methods: {
-    onChange() {
-      this.toggle();
+    handleChange () {
+      this.$emit('input', this.value);
     },
-    toggle() {
-      this.$emit('input', this.state ? '' : this.value);
-    }
   },
 }
 </script>

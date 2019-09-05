@@ -5,7 +5,8 @@
         v-on="$listeners"
         :required="required"
         :disabled="disabled || loading"
-        :checked="value"
+        :value="checked"
+        :checked="checked"
         class="hidden"
         @change="handleChange">
       <div :class="classes">
@@ -13,25 +14,14 @@
       </div>
       <span v-if="label" :class="textClasses">{{ label }}</span>
     </label>
-    <p :class="errorClasses">{{ error }}</p>
+    <p-error v-if="error" :error="error" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'PCheckbox',
-  model: {
-      prop: 'modelValue',
-      event: 'input'
-  },
   props: {
-    modelValue: {
-      default: undefined,
-    },
-    checked: {
-      type: Boolean,
-      default: false,
-    },
     required: {
         type: Boolean,
         default: false,
@@ -56,11 +46,11 @@ export default {
       type: [String,null],
       default: null,
     },
-    model: {}
+    value: {},
   },
   data () {
     return {
-      value: false,
+      checked: false,
     }
   },
   computed: {
@@ -108,19 +98,12 @@ export default {
         'font-semibold': true,
       }
     },
-    errorClasses () {
-      return {
-        'text-xs': true,
-        'text-red-400': true,
-      }
-    },
   },
   methods: {
     handleChange () {
-      this.value = !this.value
-
-      this.$emit('input', this.value)
-    }
+      this.checked = !this.checked
+      this.$emit('input', this.checked)
+    },
   },
 }
 </script>

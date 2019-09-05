@@ -1,6 +1,15 @@
 <template>
   <div class="container mx-auto">
     <div>
+      <p-input
+        v-model="input"
+        id="test"
+        label="Test"
+        placeholder="This is a test"
+        error="This is an error."
+        color="blue-600"
+        class="mb-4" />
+
       <p-button
         outline
         background="blue-600"
@@ -52,26 +61,69 @@
         Hello
       </p-button>
 
-      <p-checkbox v-model="button.one" color="blue-600" :label="`${ button.one ? 'Checked' : 'Unchecked' }`" class="mb-4"/>
+      <p-checkbox
+        v-model="button.one"
+        color="blue-600"
+        :label="`${ button.one ? 'Checked' : 'Unchecked' }`"
+        class="mb-4"/>
 
-      <p-checkbox v-model="button.two" color="blue-600" disabled label="Label 2" class="mb-4" />
+      <p-checkbox
+        v-model="button.two"
+        color="blue-600"
+        disabled
+        label="Label 2"
+        class="mb-4" />
 
-      <p-checkbox v-model="button.three" color="blue-600" loading label="Label 3" error="Error loading..." class="mb-4"/>
+      <p-checkbox
+        v-model="button.three"
+        color="blue-600"
+        loading
+        label="Label 3"
+        error="Error loading..."
+        class="mb-4"/>
 
-      <p-checkbox v-model="button.four" color="blue-600" class="mb-4"/>
+      <p-checkbox
+        v-model="button.four"
+        color="blue-600"
+        class="mb-4"/>
 
-      <p-checkbox v-model="button.five" color="blue-600" disabled class="mb-4"/>
+      <p-checkbox
+        v-model="button.five"
+        color="blue-600"
+        disabled
+        class="mb-4"/>
 
-      <p-checkbox v-model="button.six" color="blue-600" loading checked error="Error Example" class="mb-4"/>
+      <p-checkbox
+        v-model="button.six"
+        color="blue-600"
+        loading
+        checked
+        error="Error Example"
+        class="mb-4"/>
 
-      <p-radio v-model="radio" label="Number 1" value="1" class="mb-4"/>
+      <p-radio
+        v-model="radio"
+        abel="Number 1"
+        value=
+        "1" class="mb-4"/>
 
-      <p-radio v-model="radio" label="Number 2" value="2" class="mb-4" error="This is a cool error."/>
+      <p-radio
+        v-model="radio"
+        abel="Number 2"
+        value=
+        "2" class="mb-4" error="This is a cool error."/>
 
-      <p-radio v-model="radio" loading value="4" class="mb-4"/>
+      <p-radio
+        v-model="radio"
+        oading value="4"
+        class=
+        "mb-4"/>
 
-      <p-radio v-model="radio" disabled value="5" class="mb-4" error="this error is cooler." />
-
+      <p-radio
+        v-model="radio"
+        isabled value="5"
+        class=
+        "mb-4" error="this error is cooler." />
     </div>
     <vuep :template="code"></vuep>
   </div>
@@ -81,6 +133,7 @@
 export default {
   data () {
     return {
+      input: '',
       radio: '1',
       button: {
         one: false,
