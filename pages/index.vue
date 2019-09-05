@@ -1,11 +1,21 @@
 <template>
   <div class="container mx-auto">
     <div>
+      <p-select
+        v-model="selected"
+        id="test"
+        label="Test"
+        :options="options"
+        error="This is an error."
+        color="blue-600"
+        class="mb-4" />
+
       <p-textarea
         v-model="input"
         autofocus
         id="test"
         label="Test"
+        disabled
         placeholder="This is a test"
         error="This is an error."
         color="blue-600"
@@ -143,6 +153,10 @@
 export default {
   data () {
     return {
+      options: [
+        {text: 'one', value: 1}, {text: 'two', value: 2}, {text: 'three', value: 3}, {text: 'four', value: 4}, {text: 'five', value: 5},
+      ],
+      selected: null,
       input: '',
       radio: '1',
       button: {

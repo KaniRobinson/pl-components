@@ -1,33 +1,37 @@
 <template>
-  <div>
+  <div class="relative">
     <label
       v-if="label"
       :for="id"
       :class="labelClasses">
       {{ label }}
     </label>
-    <input
-      :id="id"
-      :class="classes"
-      :value="value"
-      :required="required"
-      :disabled="disabled"
-      :autocomplete="autocomplete"
-      :autofocus="autofocus"
-      :type="type"
-      :min="min"
-      :max="max"
-      :step="step"
-      :pattern="pattern"
-      :placeholder="placeholder"
-      @input="$emit('input', $event.target.value)">
+    <div class="flex items-center">
+      <select
+        v-model="selected"
+        :required="required"
+        :disabled="disabled"
+        :value="value"
+        :class="classes"
+        @input="event => $emit('input', event.target.value)">
+        <option disabled value="">{{ placeholder ? placeholder : 'Please select one' }}</option>
+        <option
+          v-for="(option,index) in options"
+          :key="index"
+          :value="option.value">
+          {{ option.text }} {{ option.value }}
+        </option>
+      </select>
+      <i class="fas fa-chevron-down text-sm absolute right-0 mr-4" />
+    </div>
+
     <p-error v-if="error" :error="error" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PInput',
+  name: 'PSelect',
   props: {
     id: {
       type: String,
@@ -40,11 +44,6 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
-    },
-    type: {
-      type: String,
-      default: 'text',
-      validator: value => ['email', 'month', 'number', 'password', 'search', 'tel', 'text', 'time', 'url', 'week'].includes(value),
     },
     label: {
       type: [String,null],
@@ -62,35 +61,16 @@ export default {
       type: String,
       default: 'blue-600',
     },
-    value: {
-      type: [String],
+    options: {
+      type: Array,
       required: true,
     },
-    autocomplete: {
-      type: String,
-      default: 'off',
-      validator: value => ['on', 'off'].includes(value),
-    },
-    autofocus: {
-      type: Boolean,
-      default: false,
-    },
-    min: {
-      type: [String,null],
-      default: null,
-    },
-    max: {
-      type: [String,null],
-      default: null,
-    },
-    pattern: {
-      type: [String,null],
-      default: null,
-    },
-    step: {
-      type: [String,null],
-      default: null,
-    },
+    value: {},
+  },
+  data () {
+    return {
+      selected: null,
+    }
   },
   computed: {
     labelClasses () {
@@ -116,6 +96,7 @@ export default {
         'rounded': true,
         'py-3': true,
         'px-4': true,
+        'pr-8': true,
         'leading-tight': true,
         'focus:outline-none': true,
         'focus:bg-white': true,
@@ -123,6 +104,14 @@ export default {
         'mb-1': !!this.error,
       }
     },
+  },
+  watch: {
+    value: {
+      handler (value) {
+        this.selected = value
+      },
+      immediate: true,
+    }
   },
 }
 </script>

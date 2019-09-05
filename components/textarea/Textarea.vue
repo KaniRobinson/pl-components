@@ -11,6 +11,7 @@
       :class="classes"
       :value="value"
       :required="required"
+      :disabled="disabled"
       :autofocus="autofocus"
       :placeholder="placeholder"
       @input="$emit('input', $event.target.value)" />
@@ -27,8 +28,12 @@ export default {
       required: true,
     },
     required: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     label: {
       type: [String,null],
@@ -47,8 +52,8 @@ export default {
       default: 'blue-600',
     },
     value: {
-      type: [String],
-      required: true,
+      type: [String,null],
+      default: null,
     },
     autofocus: {
       type: Boolean,
