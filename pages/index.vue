@@ -1,6 +1,93 @@
 <template>
   <div class="container mx-auto">
     <div>
+      <p-row>
+        <p-column class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column>
+        <p-column-2 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-2>
+        <p-column-2 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-2>
+        <p-column-3 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-3>
+        <p-column-3 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-3>
+        <p-column-3 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-3>
+        <p-column-4 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-4>
+        <p-column-4 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-4>
+        <p-column-4 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-4>
+        <p-column-4 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-4>
+        <p-column-5 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-5>
+        <p-column-5 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-5>
+        <p-column-5 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-5>
+        <p-column-5 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-5>
+        <p-column-5 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-5>
+        <p-column-6 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-6>
+        <p-column-6 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-6>
+        <p-column-6 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-6>
+        <p-column-6 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-6>
+        <p-column-6 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-6>
+        <p-column-6 class="mb-4">
+          <p-card color="blue-300">
+          </p-card>
+        </p-column-6>
+      </p-row>
+
       <p-select
         v-model="selected"
         id="test"
@@ -124,26 +211,96 @@
       <p-radio
         v-model="radio"
         abel="Number 1"
-        value=
-        "1" class="mb-4"/>
+        value="1"
+        class="mb-4"/>
 
       <p-radio
         v-model="radio"
-        abel="Number 2"
-        value=
-        "2" class="mb-4" error="This is a cool error."/>
+        label="Number 2"
+        value="2"
+        class="mb-4"
+        error="This is a cool error."/>
 
       <p-radio
         v-model="radio"
-        oading value="4"
-        class=
-        "mb-4"/>
+        loading
+        value="4"
+        class="mb-4"/>
 
       <p-radio
         v-model="radio"
-        isabled value="5"
-        class=
-        "mb-4" error="this error is cooler." />
+        disabled
+        value="5"
+        class="mb-4"
+        error="this error is cooler." />
+
+      <p-avatar
+        name="Kani Robinson"
+        xs
+        class="mb-4"/>
+      <p-avatar
+        name="Kani Robinson"
+        xs
+        loading
+        class="mb-4"/>
+
+      <p-avatar
+        name="Kani Robinson"
+        sm
+        class="mb-4"/>
+      <p-avatar
+        name="Kani Robinson"
+        sm
+        loading
+        class="mb-4"/>
+
+      <p-avatar
+        name="Kani Robinson"
+        class="mb-4"/>
+      <p-avatar
+        name="Kani Robinson"
+        loading
+        class="mb-4"/>
+
+      <p-avatar
+        name="Kani Robinson"
+        lg
+        class="mb-4"/>
+      <p-avatar
+        name="Kani Robinson"
+        lg
+        loading
+        class="mb-4"/>
+
+      <p-avatar
+        name="Kani Robinson"
+        xl
+        class="mb-4"/>
+      <p-avatar
+        name="Kani Robinson"
+        xl
+        loading
+        class="mb-4"/>
+
+      <p-avatar
+        name="Kani Robinson"
+        xxl
+        class="mb-4"/>
+      <p-avatar
+        name="Kani Robinson"
+        xxl
+        loading
+        class="mb-4"/>
+
+      <p-avatar
+        name="Kani Robinson"
+        xxxl
+        class="mb-4"/>
+      <p-avatar
+        name="Kani Robinson"
+        xxxl
+        loading
+        class="mb-4"/>
     </div>
     <vuep :template="code"></vuep>
   </div>
