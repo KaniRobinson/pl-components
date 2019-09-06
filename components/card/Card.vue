@@ -23,7 +23,7 @@ export default {
   computed: {
     classes () {
       return {
-        'rounded': true,
+        'rounded-lg': true,
         'shadow': true,
         [`bg-${this.color}`]: true,
       }

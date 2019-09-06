@@ -170,9 +170,16 @@ module.exports = {
     }),
     borderRadius: {
       none: '0',
+      xs: '0.100rem',
       sm: '0.125rem',
       default: '0.25rem',
       lg: '0.5rem',
+      xl: '0.75rem',
+      '2xl': '1rem',
+      '3xl': '1.25rem',
+      '4xl': '1.5rem',
+      '5xl': '1.75rem',
+      '6xl': '2rem',
       full: '9999px',
     },
     borderWidth: {
