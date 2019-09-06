@@ -37,6 +37,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    reveal: {
+      type: Boolean,
+      default: false,
+    },
     disabled: {
       type: Boolean,
       default: false,
@@ -98,7 +102,6 @@ export default {
         'block': true,
         'tracking-wide': true,
         'text-gray-700': true,
-        'text-sm': true,
         'font-bold': true,
         'mb-2': true,
       }
