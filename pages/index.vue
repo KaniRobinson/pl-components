@@ -240,6 +240,7 @@
         class="mb-4"/>
       <p-avatar
         name="Kani Robinson"
+        image="/images/avatar.png"
         xs
         loading
         class="mb-4"/>
@@ -250,6 +251,7 @@
         class="mb-4"/>
       <p-avatar
         name="Kani Robinson"
+        image="/images/avatar.png"
         sm
         loading
         class="mb-4"/>
@@ -258,6 +260,7 @@
         name="Kani Robinson"
         class="mb-4"/>
       <p-avatar
+        image="/images/avatar.png"
         name="Kani Robinson"
         loading
         class="mb-4"/>
@@ -268,6 +271,7 @@
         class="mb-4"/>
       <p-avatar
         name="Kani Robinson"
+        image="/images/avatar.png"
         lg
         loading
         class="mb-4"/>
@@ -278,6 +282,7 @@
         class="mb-4"/>
       <p-avatar
         name="Kani Robinson"
+        image="/images/avatar.png"
         xl
         loading
         class="mb-4"/>
@@ -288,6 +293,7 @@
         class="mb-4"/>
       <p-avatar
         name="Kani Robinson"
+        image="/images/avatar.png"
         xxl
         loading
         class="mb-4"/>
@@ -298,6 +304,7 @@
         class="mb-4"/>
       <p-avatar
         name="Kani Robinson"
+        image="/images/avatar.png"
         xxxl
         loading
         class="mb-4"/>
