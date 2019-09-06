@@ -36,7 +36,7 @@ export default {
     },
     imageClasses () {
       return {
-        'rounded-t': true,
+        'rounded-t-lg': true,
         'w-full': true,
       }
     },
