@@ -52,6 +52,7 @@ export default {
   computed: {
     classes () {
       return {
+        'transition-300': true,
         'flex': true,
         'items-center': true,
         'justify-center': true,
@@ -63,8 +64,7 @@ export default {
         'leading-tight': true,
         'cursor-pointer': true,
         'relative': true,
-        'font-semibold': true,
-        'text-center': true,
+        'text-sm': true,
         'select-none': true,
         'focus:no-underline': true,
         'focus:outline-none': true,
