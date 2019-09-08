@@ -6,21 +6,25 @@
       :class="labelClasses">
       {{ label }}
     </label>
-    <input
-      :id="id"
-      :class="classes"
-      :value="value"
-      :required="required"
-      :disabled="disabled"
-      :autocomplete="autocomplete"
-      :autofocus="autofocus"
-      :type="type"
-      :min="min"
-      :max="max"
-      :step="step"
-      :pattern="pattern"
-      :placeholder="placeholder"
-      @input="$emit('input', $event.target.value)">
+    <div class="relative">
+      <i v-if="leftIcon" :class="leftIconClasses" />
+      <input
+        :id="id"
+        :class="classes"
+        :value="value"
+        :required="required"
+        :disabled="disabled"
+        :autocomplete="autocomplete"
+        :autofocus="autofocus"
+        :type="type"
+        :min="min"
+        :max="max"
+        :step="step"
+        :pattern="pattern"
+        :placeholder="placeholder"
+        @input="$emit('input', $event.target.value)">
+        <i v-if="icon" :class="rightIconClasses" />
+    </div>
     <p-error v-if="error" :error="error" />
   </div>
 </template>
@@ -69,6 +73,14 @@ export default {
     value: {
       type: [String],
       required: true,
+    },
+    leftIcon: {
+      type: [String,null],
+      default: null,
+    },
+    icon: {
+      type: [String,null],
+      default: null,
     },
     autocomplete: {
       type: String,
@@ -119,11 +131,39 @@ export default {
         'rounded': true,
         'py-3': true,
         'px-4': true,
+        'pl-10': !!this.leftIcon,
+        'pr-10': !!this.icon,
         'leading-tight': true,
         'focus:outline-none': true,
         'focus:bg-white': true,
         [`focus:border-${this.color}`]: true,
         'mb-1': !!this.error,
+      }
+    },
+    rightIconClasses () {
+      return {
+        'table': true,
+        'absolute': true,
+        'top-0': true,
+        'bottom-0': true,
+        'right-0': true,
+        'my-auto': true,
+        'mr-4': true,
+        'text-gray-700': true,
+        [this.icon]: true,
+      }
+    },
+    leftIconClasses () {
+      return {
+        'table': true,
+        'absolute': true,
+        'top-0': true,
+        'bottom-0': true,
+        'left-0': true,
+        'my-auto': true,
+        'ml-4': true,
+        'text-gray-700': true,
+        [this.leftIcon]: true,
       }
     },
   },
