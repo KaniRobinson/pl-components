@@ -1,3 +1,4 @@
+export { default as Header } from './header/Header'
 export { default as Error } from './error/Error'
 export { default as Button } from './button/Button'
 export { default as Checkbox } from './checkbox/Checkbox'
