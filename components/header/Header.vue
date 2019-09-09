@@ -1,57 +1,59 @@
 <template>
   <div>
     <header :class="classes">
-      <img
-        :class="logoClasses"
-        :src="logo"
-        alt="Logo"
-        class="transition-300 active:scale-md"
-        @click="handleLogo" />
-      <p-input
-        id="search"
-        v-model="search"
-        :class="searchClasses"
-        :leftIcon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
-        placeholder="Search by breed"
-        @input="handleSearch" />
-      <p-button
-        v-if="!authenticated"
-        outline
-        background="blue-600"
-        color="blue-600"
-        class="mr-4 active:scale-md hidden md:block"
-        @click="handleLogin">
-        Sign in
-      </p-button>
-      <p-button
-        v-if="!authenticated"
-        background="blue-600"
-        color="white"
-        class="active:scale-md hidden md:block"
-        @click="handleRegister">
-        Sign up
-      </p-button>
-      <p-button
-        v-if="authenticated"
-        background="blue-600"
-        icon="fas fa-plus"
-        color="white"
-        class="mr-4 active:scale-md hidden md:block"
-        @click="handleAdvertise">
-        Advertise
-      </p-button>
-      <p-button
-        v-if="authenticated"
-        outline
-        background="blue-600"
-        color="blue-600"
-        class="active:scale-md hidden md:block"
-        @click="handleLogout">
-        Logout
-      </p-button>
-      <i
-        class="fas fa-bars block md:hidden cursor-pointer"
-        @click="handleToggle" />
+      <section class="container mx-auto flex items-center">
+        <img
+          :class="logoClasses"
+          :src="logo"
+          alt="Logo"
+          class="transition-300 active:scale-md"
+          @click="handleLogo" />
+        <p-input
+          id="search"
+          v-model="search"
+          :class="searchClasses"
+          :leftIcon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
+          placeholder="Search by breed"
+          @input="handleSearch" />
+        <p-button
+          v-if="!authenticated"
+          outline
+          background="blue-600"
+          color="blue-600"
+          class="mr-4 active:scale-md hidden md:block"
+          @click="handleLogin">
+          Sign in
+        </p-button>
+        <p-button
+          v-if="!authenticated"
+          background="blue-600"
+          color="white"
+          class="active:scale-md hidden md:block"
+          @click="handleRegister">
+          Sign up
+        </p-button>
+        <p-button
+          v-if="authenticated"
+          background="blue-600"
+          icon="fas fa-plus"
+          color="white"
+          class="mr-4 active:scale-md hidden md:block"
+          @click="handleAdvertise">
+          Advertise
+        </p-button>
+        <p-button
+          v-if="authenticated"
+          outline
+          background="blue-600"
+          color="blue-600"
+          class="active:scale-md hidden md:block"
+          @click="handleLogout">
+          Logout
+        </p-button>
+        <i
+          class="fas fa-bars block md:hidden cursor-pointer"
+          @click="handleToggle" />
+      </section>
     </header>
   </div>
 </template>
@@ -80,11 +82,10 @@ export default {
   computed: {
     classes () {
       return {
-        'flex': true,
-        'items-center': true,
         'bg-white': true,
         'border-b': true,
         'p-4': true,
+        'md:px-0': true,
       }
     },
     logoClasses () {

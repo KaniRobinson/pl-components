@@ -142,12 +142,14 @@ export default {
     },
     rightIconClasses () {
       return {
-        'table': true,
+        'block': true,
         'absolute': true,
+        'right-0': true,
         'top-0': true,
         'bottom-0': true,
-        'right-0': true,
         'my-auto': true,
+        'h-5': true,
+        'justify-center': true,
         'mr-4': true,
         'text-gray-700': true,
         [this.icon]: true,
@@ -155,12 +157,14 @@ export default {
     },
     leftIconClasses () {
       return {
-        'table': true,
+        'block': true,
         'absolute': true,
+        'left-0': true,
         'top-0': true,
         'bottom-0': true,
-        'left-0': true,
         'my-auto': true,
+        'h-5': true,
+        'justify-center': true,
         'ml-4': true,
         'text-gray-700': true,
         [this.leftIcon]: true,
