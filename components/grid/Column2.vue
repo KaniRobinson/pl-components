@@ -10,7 +10,8 @@ export default {
   computed: {
     classes () {
       return {
-        'w-1/2': true,
+        'w-full': true,
+        'md:w-1/2': true,
         'px-2': true,
       }
     },

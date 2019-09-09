@@ -7,83 +7,83 @@
           </p-card>
         </p-column>
         <p-column-2 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="red-300">
           </p-card>
         </p-column-2>
         <p-column-2 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="red-300">
           </p-card>
         </p-column-2>
         <p-column-3 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="green-300">
           </p-card>
         </p-column-3>
         <p-column-3 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="green-300">
           </p-card>
         </p-column-3>
         <p-column-3 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="green-300">
           </p-card>
         </p-column-3>
         <p-column-4 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="yellow-300">
           </p-card>
         </p-column-4>
         <p-column-4 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="yellow-300">
           </p-card>
         </p-column-4>
         <p-column-4 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="yellow-300">
           </p-card>
         </p-column-4>
         <p-column-4 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="yellow-300">
           </p-card>
         </p-column-4>
         <p-column-5 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="orange-300">
           </p-card>
         </p-column-5>
         <p-column-5 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="orange-300">
           </p-card>
         </p-column-5>
         <p-column-5 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="orange-300">
           </p-card>
         </p-column-5>
         <p-column-5 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="orange-300">
           </p-card>
         </p-column-5>
         <p-column-5 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="orange-300">
           </p-card>
         </p-column-5>
         <p-column-6 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="gray-300">
           </p-card>
         </p-column-6>
         <p-column-6 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="gray-300">
           </p-card>
         </p-column-6>
         <p-column-6 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="gray-300">
           </p-card>
         </p-column-6>
         <p-column-6 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="gray-300">
           </p-card>
         </p-column-6>
         <p-column-6 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="gray-300">
           </p-card>
         </p-column-6>
         <p-column-6 class="mb-4">
-          <p-card color="blue-300">
+          <p-card color="gray-300">
           </p-card>
         </p-column-6>
       </p-row>
