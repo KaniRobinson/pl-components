@@ -11,7 +11,8 @@ export default {
     classes () {
       return {
         'w-full': true,
-        'md:w-1/2': true,
+        'sm:w-1/2': true,
+        'md:w-1/3': true,
         'lg:w-1/4': true,
         'px-2': true,
       }
