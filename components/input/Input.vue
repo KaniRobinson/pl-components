@@ -22,7 +22,9 @@
         :step="step"
         :pattern="pattern"
         :placeholder="placeholder"
-        @input="$emit('input', $event.target.value)">
+        @input="$emit('input', $event.target.value)"
+        @focus="$emit('focus', $event)"
+        @blur="$emit('blur', $event)">
         <i v-if="icon" :class="rightIconClasses" />
     </div>
     <p-error v-if="error" :error="error" />
