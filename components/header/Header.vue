@@ -8,13 +8,15 @@
           alt="Logo"
           class="transition-300 active:scale-md"
           @click="handleLogo" />
-        <p-input
+        <p-autocomplete
           id="search"
           v-model="search"
+          :items="searchResults"
           :class="searchClasses"
           :leftIcon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
           placeholder="Search by breed"
-          @input="handleSearch" />
+          @input="handleSearch"
+          @handleItem="handleSearchItem" />
         <p-button
           v-if="!authenticated"
           outline
@@ -69,7 +71,11 @@ export default {
     logo: {
       type: String,
       required: true,
-    }
+    },
+    searchResults: {
+      type: Array,
+      default: [],
+    },
   },
   data () {
     return {
@@ -129,6 +135,9 @@ export default {
         await this.$emit('handleSearch', this.search)
         this.typing = false
       }, 1000)
+    },
+    handleSearchItem (item) {
+      this.$emit('handleSearchItem', item)
     },
   },
 }
