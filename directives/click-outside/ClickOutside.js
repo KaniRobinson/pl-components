@@ -70,6 +70,7 @@ function unbind(el) {
 }
 
 const directive = {
+  name: 'click-outside',
   bind,
   update,
   unbind,
