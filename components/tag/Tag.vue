@@ -23,7 +23,6 @@ export default {
         'inline-block': true,
         'rounded-full': true,
         'px-3': true,
-        'py-1': true,
         'text-sm': true,
         'font-semibold': true,
         [`bg-${this.color}`]: true,
