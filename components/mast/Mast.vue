@@ -1,9 +1,9 @@
 <template>
   <section :class="classes">
     <div class="container max-w-3xl mx-auto">
-      <p :class="tagClasses">{{ tag }}</p>
-      <p :class="titleClasses">{{ title }}</p>
-      <p :class="captionClasses">{{ caption }}</p>
+      <p v-if="tag" :class="tagClasses">{{ tag }}</pv->
+      <p v-if="title" :class="titleClasses">{{ title }}</p>
+      <p v-if="caption" :class="captionClasses">{{ caption }}</p>
       <slot></slot>
     </div>
   </section>
@@ -14,16 +14,16 @@ export default {
   name: 'PMast',
   props: {
     tag: {
-      type: String,
-      required: true,
+      type: [String,null],
+      default: null,
     },
     title: {
-      type: String,
-      required: true,
+      type: [String,null],
+      default: null,
     },
     caption: {
-      type: String,
-      required: true,
+      type: [String,null],
+      default: null,
     },
   },
   computed: {

@@ -309,7 +309,7 @@
         loading
         class="mb-4"/>
     </div>
-    <vuep :template="code"></vuep>
+    <vuep :template="code" :iframe="true"></vuep>
   </div>
 </template>
 
@@ -337,14 +337,14 @@ export default {
   created () {
     this.code = `
 <template>
-  <div>Hello</div>
+  <div>{{ lol }}</div>
 </template>
 
 <script>
 module.exports = {
   data: function () {
     return {
-      //
+      lol: 'hi'
     }
   },
   computed: {
