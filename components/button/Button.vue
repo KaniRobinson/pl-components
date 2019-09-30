@@ -38,7 +38,7 @@ export default {
     },
     pill: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     outline: {
       type: Boolean,
@@ -59,6 +59,7 @@ export default {
         'py-4': true,
         'px-6': true,
         'rounded-full': this.pill,
+        'rounded': !this.pill,
         'text-center': true,
         'no-underline': true,
         'leading-tight': true,
