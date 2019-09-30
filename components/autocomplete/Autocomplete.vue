@@ -24,7 +24,7 @@
           :class="itemClasses"
           @click="handleItem(item)" />
       </template>
-      <li v-else :class="emptyClasses">
+      <li v-else-if="value.length > 0" :class="emptyClasses">
         Could not find results for {{ value }}
       </li>
     </ul>
