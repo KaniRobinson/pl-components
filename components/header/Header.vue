@@ -13,45 +13,11 @@
           v-model="search"
           :items="searchResults"
           :class="searchClasses"
-          :leftIcon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
-          placeholder="Search by breed"
+          :icon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
+          :placeholder="placeholder"
           @input="handleSearch"
           @handleItem="handleSearchItem" />
-        <p-button
-          v-if="!authenticated"
-          outline
-          background="blue-600"
-          color="blue-600"
-          class="mr-4 active:scale-md hidden md:block"
-          @click="handleLogin">
-          Sign in
-        </p-button>
-        <p-button
-          v-if="!authenticated"
-          background="blue-600"
-          color="white"
-          class="active:scale-md hidden md:block"
-          @click="handleRegister">
-          Sign up
-        </p-button>
-        <p-button
-          v-if="authenticated"
-          background="blue-600"
-          icon="fas fa-plus"
-          color="white"
-          class="mr-4 active:scale-md hidden md:block"
-          @click="handleAdvertise">
-          Advertise
-        </p-button>
-        <p-button
-          v-if="authenticated"
-          outline
-          background="blue-600"
-          color="blue-600"
-          class="active:scale-md hidden md:block"
-          @click="handleLogout">
-          Logout
-        </p-button>
+        <slot />
         <i
           class="fas fa-bars block md:hidden cursor-pointer"
           @click="handleToggle" />
@@ -64,10 +30,6 @@
 export default {
   name: 'PHeader',
   props: {
-    authenticated: {
-      type: Boolean,
-      required: true,
-    },
     logo: {
       type: String,
       required: true,
@@ -76,6 +38,10 @@ export default {
       type: Array,
       default: [],
     },
+    placeholder: {
+      type: String,
+      default: 'Search'
+    }
   },
   data () {
     return {
@@ -104,25 +70,12 @@ export default {
     searchClasses () {
       return {
         'flex-1': true,
-        'mr-4': true,
       }
     },
   },
   methods: {
     handleLogo () {
       this.$emit('handleLogo')
-    },
-    handleLogin () {
-      this.$emit('handleLogin')
-    },
-    handleRegister () {
-      this.$emit('handleRegister')
-    },
-    handleLogout () {
-      this.$emit('handleLogout')
-    },
-    handleAdvertise () {
-      this.$emit('handleAdvertise')
     },
     handleToggle () {
       this.menu = !this.menu

@@ -8,6 +8,8 @@
       :autocomplete="autocomplete"
       :autofocus="autofocus"
       :type="type"
+      :icon="icon"
+      :leftIcon="leftIcon"
       :min="min"
       :max="max"
       :step="step"
@@ -74,7 +76,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'blue-600',
+      default: 'blue-400',
     },
     value: {
       type: [String],

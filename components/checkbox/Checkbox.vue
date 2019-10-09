@@ -40,7 +40,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'blue-600',
+      default: 'blue-400',
     },
     error: {
       type: [String,null],

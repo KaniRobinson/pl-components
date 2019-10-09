@@ -22,9 +22,12 @@ export default {
       return {
         'inline-block': true,
         'rounded-full': true,
+        'leading-none': true,
+        'font-semibold': true,
+        'py-2': true,
         'px-3': true,
         'text-sm': true,
-        'font-semibold': true,
+        'font-light': true,
         [`bg-${this.color}`]: true,
         [`text-${this.textColor}`]: true,
       }

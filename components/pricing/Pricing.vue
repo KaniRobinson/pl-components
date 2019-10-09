@@ -22,7 +22,7 @@
           </li>
         </ul>
         <p-button
-          background="blue-600"
+          background="blue-400"
           color="white"
           class="w-full">
           {{ item.button }}

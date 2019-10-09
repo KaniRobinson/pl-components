@@ -59,7 +59,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'blue-600',
+      default: 'blue-400',
     },
     options: {
       type: Array,
@@ -77,9 +77,10 @@ export default {
       return {
         'block': true,
         'tracking-wide': true,
-        'text-gray-700': true,
-        'text-sm': true,
-        'font-bold': true,
+        'text-gray-800': true,
+        'font-semibold': true,
+        'text-xs': true,
+        'uppercase': true,
         'mb-2': true,
       }
     },
@@ -90,7 +91,7 @@ export default {
         'block': true,
         'w-full': true,
         'bg-gray-200': true,
-        'text-gray-700': true,
+        'text-gray-800': true,
         'border': true,
         'border-gray-200': true,
         'rounded': true,

@@ -26,15 +26,15 @@ export default {
     },
     background: {
       type: String,
-      default: 'transparent',
+      default: 'blue-400',
     },
-    hover: {
+    hoverBackground: {
       type: String,
-      default: 'transparent',
+      default: 'blue-600',
     },
     color: {
       type: String,
-      default: 'gray-900',
+      default: 'white',
     },
     pill: {
       type: Boolean,
@@ -67,6 +67,7 @@ export default {
         'relative': true,
         'text-sm': true,
         'select-none': true,
+        'font-semibold': true,
         'focus:no-underline': true,
         'focus:outline-none': true,
         'border': this.outline,
