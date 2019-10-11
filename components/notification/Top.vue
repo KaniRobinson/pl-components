@@ -1,7 +1,7 @@
 <template>
   <div :class="classes">
     <div class="container mx-auto flex items-center">
-      <p-tag class="mr-4">lorem</p-tag>
+      <p-tag v-if="tagText" class="mr-4">{{ tagText }}</p-tag>
       <p class="text-white flex-1 mr-4 text-sm">{{ text }}</p>
       <slot />
     </div>
@@ -12,6 +12,10 @@
 export default {
   name: 'PNotificationTop',
   props: {
+    tagText: {
+      type: [String,null],
+      default: null
+    },
     text: {
       type: String,
       required: true
