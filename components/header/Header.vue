@@ -1,29 +1,27 @@
 <template>
-  <div>
-    <header :class="classes">
-      <section class="container mx-auto flex items-center">
-        <img
-          :class="logoClasses"
-          :src="logo"
-          alt="Logo"
-          class="transition-300 active:scale-md"
-          @click="handleLogo" />
-        <p-autocomplete
-          id="search"
-          v-model="search"
-          :items="searchResults"
-          :class="searchClasses"
-          :icon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
-          :placeholder="placeholder"
-          @input="handleSearch"
-          @handleItem="handleSearchItem" />
-        <slot />
-        <i
-          class="fas fa-bars block md:hidden cursor-pointer"
-          @click="handleToggle" />
-      </section>
-    </header>
-  </div>
+  <header :class="classes">
+    <section class="container mx-auto flex items-center">
+      <img
+        :class="logoClasses"
+        :src="logo"
+        alt="Logo"
+        class="transition-300 active:scale-md"
+        @click="handleLogo" />
+      <p-autocomplete
+        id="search"
+        v-model="search"
+        :items="searchResults"
+        :class="searchClasses"
+        :icon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
+        :placeholder="placeholder"
+        @input="handleSearch"
+        @handleItem="handleSearchItem" />
+      <slot />
+      <i
+        class="fas fa-bars block md:hidden cursor-pointer"
+        @click="handleToggle" />
+    </section>
+  </header>
 </template>
 
 <script>
@@ -70,6 +68,7 @@ export default {
     searchClasses () {
       return {
         'flex-1': true,
+        'mr-4': true,
       }
     },
   },
