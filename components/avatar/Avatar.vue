@@ -75,14 +75,14 @@ export default {
       return '16'
     },
     uiAvatarSize () {
-      if (this.xs) return '40'
-      if (this.sm) return '48'
-      if (this.md) return '64'
-      if (this.lg) return '96'
-      if (this.xl) return '128'
-      if (this.xxl) return '192'
-      if (this.xxxl) return '526'
-      return '64'
+      if (this.xs) return 40 * 2
+      if (this.sm) return 48 * 2
+      if (this.md) return 64 * 2
+      if (this.lg) return 96 * 2
+      if (this.xl) return 128 * 2
+      if (this.xxl) return 192 * 2
+      if (this.xxxl) return 526 * 2
+      return 64 * 2
     },
     classes () {
       return {
