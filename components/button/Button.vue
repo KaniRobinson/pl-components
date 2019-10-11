@@ -67,7 +67,6 @@ export default {
         'relative': true,
         'text-sm': true,
         'select-none': true,
-        'font-semibold': true,
         'focus:no-underline': true,
         'focus:outline-none': true,
         'border': this.outline,
