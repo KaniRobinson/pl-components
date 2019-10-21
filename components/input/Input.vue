@@ -155,7 +155,7 @@ export default {
         'h-5': true,
         'justify-center': true,
         'mr-4': true,
-        'text-gray-800': true,
+        'text-gray-500': true,
         [this.icon]: true,
       }
     },
@@ -170,7 +170,7 @@ export default {
         'h-5': true,
         'justify-center': true,
         'ml-4': true,
-        'text-gray-800': true,
+        'text-gray-500': true,
         [this.leftIcon]: true,
       }
     },

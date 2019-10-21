@@ -1,26 +1,35 @@
 <template>
-  <header :class="classes">
-    <section class="container mx-auto flex items-center">
-      <img
-        :class="logoClasses"
-        :src="logo"
-        alt="Logo"
-        class="transition-300 active:scale-md"
-        @click="handleLogo" />
+  <header class="bg-white border-b md:px-8">
+    <nav class="relative flex flex-wrap items-center md:py-4">
+      <n-link to="/" class="flex-shrink-0 p-4 mr-4 md:p-0 active:scale-md transition-300">
+        <img class="h-10 w-10" :src="logo" alt="">
+      </n-link>
+
       <p-autocomplete
         id="search"
         v-model="search"
         :items="searchResults"
-        :class="searchClasses"
-        :icon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
+        :left-icon="typing ? 'fas fa-circle-notch fa-spin' : 'fas fa-search'"
         :placeholder="placeholder"
+        class="flex-1 mr-4"
         @input="handleSearch"
-        @handleItem="handleSearchItem" />
-      <slot />
-      <i
-        class="fas fa-bars block md:hidden cursor-pointer"
-        @click="handleToggle" />
-    </section>
+        @handleItem="handleSearchItem"
+      />
+
+      <p-header-navigation
+        @handleLogin="handleLogin"
+        @handleRegister="handleRegister" />
+
+      <div class="flex-shrink-0 pr-4 md:hidden">
+        <button type="button" class="fas fa-bars block text-gray-800 focus:outline-none focus:text-gray-900" @click="handleToggle" />
+      </div>
+    </nav>
+
+    <p-sidebar
+      :isOpen="isOpen"
+      @handleToggle="handleToggle"
+      @handleLogin="handleLogin"
+      @handleRegister="handleRegister" />
   </header>
 </template>
 
@@ -39,47 +48,25 @@ export default {
     placeholder: {
       type: String,
       default: 'Search'
-    }
+    },
+    dropdownItems: {
+      type: Array,
+      required: true,
+    },
+    items: {
+      type: Array,
+      required: true,
+    },
   },
   data () {
     return {
-      menu: false,
       search: '',
       timeout: null,
       typing: false,
+      isOpen: false,
     }
   },
-  computed: {
-    classes () {
-      return {
-        'bg-white': true,
-        'border-b': true,
-        'p-4': true,
-        'md:px-0': true,
-      }
-    },
-    logoClasses () {
-      return {
-        'cursor-pointer': true,
-        'h-10': true,
-        'mr-4': true,
-      }
-    },
-    searchClasses () {
-      return {
-        'flex-1': true,
-        'mr-4': true,
-      }
-    },
-  },
   methods: {
-    handleLogo () {
-      this.$emit('handleLogo')
-    },
-    handleToggle () {
-      this.menu = !this.menu
-      this.$emit('handleToggle')
-    },
     handleSearch () {
       clearTimeout(this.timeout)
       this.typing = true
@@ -88,9 +75,18 @@ export default {
         this.typing = false
       }, 1000)
     },
+    handleToggle () {
+      this.isOpen = !this.isOpen
+    },
     handleSearchItem (item) {
       this.$emit('handleSearchItem', item)
     },
-  },
+    handleLogin () {
+      this.$router.push('/login')
+    },
+    handleRegister () {
+      this.$router.push('/register')
+    }
+  }
 }
 </script>

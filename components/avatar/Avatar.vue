@@ -88,6 +88,7 @@ export default {
       return {
         [`w-${this.size}`]: true,
         [`h-${this.size}`]: true,
+        'flex-no-shrink': true,
         'relative': true,
       }
     },
